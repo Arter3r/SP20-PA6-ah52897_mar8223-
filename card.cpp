@@ -71,10 +71,24 @@ string Card::suitString(Card::Suit s) const {
 
 // return "A", "2", ..."Q"
 string Card::rankString(int r) const {
-    return nullptr;
+    string cardRank;
+    if (r == 1){
+        cardRank = 'A';
+    }
+    else if(r == 11){
+        cardRank = 'J';
+    }
+    else if(r == 12){
+        cardRank = 'Q';
+    }
+    else if(r == 13){
+        cardRank = 'K';
+    }
+    else{
+        cardRank = to_string(r);
+    }
+    return cardRank;
 }
-
-
 
 bool Card::operator==(const Card& rhs) const {
     return false;
