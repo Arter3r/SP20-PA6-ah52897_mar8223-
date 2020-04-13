@@ -38,7 +38,7 @@ Card::Card(int rank, Card::Suit s) {//Normal Constructor -- parameter based
 
 // return string version e.g. Ac 4h Js
 string Card::toString() const {
-    return nullptr;
+    return rankString(myRank) + rankString(mySuit);
 }
 
 
