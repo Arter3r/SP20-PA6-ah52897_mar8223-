@@ -1,6 +1,6 @@
 // File Name: card.cpp
 //
-// Created by Abdullah on 4/11/2020.
+// Created by Abdullah on 4/11/2020. [Partnering with Sakib Abdur Rahman]
 //
 // This class represents a playing card, i.e., "ace of spades"
 // a Card is constructed from a rank (int in range 1..13)
@@ -20,15 +20,16 @@
 // string suitString() -- returns "s", "h", "d" or "c"
 //
 // Note that the Ace is represented by 1 and the King by 13
-
+#include <iostream>
 #include "card.h"
 
+using namespace std;
 
 // default, ace of spades
 Card::Card() {
-
+    myRank = 1;
+    mySuit = spades;
 }
-
 
 Card::Card(int rank, Card::Suit s) {
 
