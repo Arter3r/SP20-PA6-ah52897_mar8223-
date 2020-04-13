@@ -26,15 +26,15 @@
 using namespace std;
 
 // default, ace of spades
-Card::Card() {
+Card::Card() {//Default Constructor -- default, ace of spades
     myRank = 1;
     mySuit = spades;
 }
 
-Card::Card(int rank, Card::Suit s) {
-
+Card::Card(int rank, Card::Suit s) {//Normal Constructor -- parameter based
+    myRank = rank;
+    mySuit = s;
 }
-
 
 // return string version e.g. Ac 4h Js
 string Card::toString() const {
