@@ -19,10 +19,11 @@
 
 // pristine, sorted deck
 Deck::Deck() {
+    myIndex = 0;
     int currentIndex = 0;
     for (int cRank=0; cRank<13; cRank++){
         for (int cSuit=0; cSuit<4; cSuit++){
-            myCards[currentIndex] = Card(cRank,Card::Suit(cSuit));
+            myCards[currentIndex] = Card(cRank+1,Card::Suit(cSuit));
             currentIndex++;
         }
     }
