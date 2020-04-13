@@ -26,7 +26,7 @@
 using namespace std;
 
 // default, ace of spades
-Card::Card() {//Default Constructor -- default, ace of spades
+Card::Card() {
     myRank = 1;
     mySuit = spades;
 }
