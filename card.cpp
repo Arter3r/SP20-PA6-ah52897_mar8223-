@@ -38,15 +38,12 @@ Card::Card(int rank, Card::Suit s) {//Normal Constructor -- parameter based
 
 // return string version e.g. Ac 4h Js
 string Card::toString() const {
-    return rankString(myRank) + rankString(mySuit);
+    return rankString(myRank) + suitString(mySuit);
 }
 
 // true if suit same as c
 bool Card::sameSuitAs(const Card& c) const {
-    if (mySuit == c.mySuit){
-        return true;
-    }
-    return false;
+    return mySuit == c.mySuit;
 }
 
 // return rank, 1..13
