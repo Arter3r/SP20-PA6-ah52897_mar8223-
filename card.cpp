@@ -97,3 +97,18 @@ bool Card::operator==(const Card& rhs) const {
 bool Card::operator!=(const Card& rhs) const {
     return myRank != rhs.myRank || mySuit != rhs.mySuit;
 }
+
+Card& Card::operator=(const Card& rhs) {
+    myRank = rhs.myRank;
+    mySuit = rhs.mySuit;
+    return *this;
+}
+
+Card::~Card() {
+
+}
+
+Card::Card(const Card& rhs) {
+    myRank = rhs.myRank;
+    mySuit = rhs.mySuit;
+}
