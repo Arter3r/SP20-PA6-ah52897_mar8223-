@@ -51,12 +51,23 @@ int Card::getRank() const {
     return myRank;
 }
 
-
 // return "s", "h",...
 string Card::suitString(Card::Suit s) const {
-    return nullptr;
+    string suitShort;
+    if (s == spades){
+        suitShort = 's';
+    }
+    else if (s == hearts){
+        suitShort = 'h';
+    }
+    else if (s == diamonds){
+        suitShort = 'd';
+    }
+    else {
+        suitShort = 'c';
+    }
+    return suitShort;
 }
-
 
 // return "A", "2", ..."Q"
 string Card::rankString(int r) const {
