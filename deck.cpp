@@ -17,18 +17,22 @@
 
 #include "deck.h"
 
-
 // pristine, sorted deck
 Deck::Deck() {
+    int currentIndex = 0;
+    for (int cRank=0; cRank<13; cRank++){
+        for (int cSuit=0; cSuit<4; cSuit++){
+            myCards[currentIndex] = Card(cRank,Card::Suit(cSuit));
+            currentIndex++;
+        }
+    }
 
 }
-
 
 // shuffle the deck, all 52 cards present
 void Deck::shuffle() {
 
 }
-
 
 // get a card, after 52 are dealt, fail
 Card Deck::dealCard() {
