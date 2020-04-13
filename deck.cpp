@@ -42,5 +42,5 @@ Card Deck::dealCard() {
 
 // # cards left in the deck
 int Deck::size() const {
-    return 0;
+    return SIZE-myIndex;
 }
