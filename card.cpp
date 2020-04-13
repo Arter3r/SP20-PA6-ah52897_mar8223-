@@ -46,10 +46,9 @@ bool Card::sameSuitAs(const Card& c) const {
     return mySuit == c.mySuit;
 }
 
-
 // return rank, 1..13
 int Card::getRank() const {
-    return 0;
+    return myRank;
 }
 
 
