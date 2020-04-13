@@ -41,10 +41,9 @@ string Card::toString() const {
     return rankString(myRank) + rankString(mySuit);
 }
 
-
 // true if suit same as c
 bool Card::sameSuitAs(const Card& c) const {
-    return false;
+    return mySuit == c.mySuit;
 }
 
 
