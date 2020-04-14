@@ -17,6 +17,8 @@
 #define _DECK_H
 
 #include "card.h"
+#include <random>
+#include <time.h>
 
 
 class Deck
