@@ -36,8 +36,13 @@ void Deck::shuffle() {
 }
 
 // get a card, after 52 are dealt, fail
+// Fail is defined as returning a card with negative rank.
 Card Deck::dealCard() {
-    return Card();
+    if(myIndex >= 51){
+        return Card(-1, Card::clubs);
+    }
+    myIndex++;
+    return myCards[myIndex-1];
 }
 
 
