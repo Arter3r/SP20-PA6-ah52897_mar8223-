@@ -56,8 +56,16 @@ bool Player::cardInHand(Card c) const {
 }
 
 //Remove the card c from the hand and return it to the caller
+//Precondition: Card is in hand.
 Card Player::removeCardFromHand(Card c) {
-    return Card();
+    for(int i = 0; i < myHand.size(); i++){
+        if(myHand[i] == c) {
+            swap(myHand[i], myHand[myHand.size() - 1]);
+            myHand.pop_back();
+            break;
+        }
+    }
+    return c;
 }
 
 string Player::showHand() const {
