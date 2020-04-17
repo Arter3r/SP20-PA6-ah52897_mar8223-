@@ -67,7 +67,7 @@ string Player::showHand() const {
         visibleHand += myHand[i].toString()+" ";
         i++;
     }
-    return visibleHand;
+    return visibleHand.substr(0, visibleHand.size()-1);
 }
 
 string Player::showBooks() const {
