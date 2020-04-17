@@ -97,8 +97,8 @@ bool fish(Player& p, Deck& d) {
         out << p.getName() << " picks up " << fished.toString();
 
         if (bookCards(p)) {
-            cout << ", and books it" << endl;
-            out << ", and books it" << endl;
+            cout << ", and books it";
+            out << ", and books it";
         }
 
         cout << "." << endl;
