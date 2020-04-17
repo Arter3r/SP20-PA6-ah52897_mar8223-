@@ -17,6 +17,7 @@ void dealHand(Deck &d, Player &p, int numCards);
 
 int main( )
 {
+    srand(time(NULL));
     int numCards = 5;
     
     Player p1("Joe");

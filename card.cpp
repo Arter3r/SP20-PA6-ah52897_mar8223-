@@ -1,6 +1,6 @@
 // File Name: card.cpp
 //
-// Created by Abdullah on 4/11/2020.
+// Created by Abdullah on 4/11/2020. [Partnering with Sakib Abdur Rahman]
 //
 // This class represents a playing card, i.e., "ace of spades"
 // a Card is constructed from a rank (int in range 1..13)
@@ -20,58 +20,95 @@
 // string suitString() -- returns "s", "h", "d" or "c"
 //
 // Note that the Ace is represented by 1 and the King by 13
-
+#include <iostream>
 #include "card.h"
 
+using namespace std;
 
 // default, ace of spades
 Card::Card() {
-
+    myRank = 1;
+    mySuit = spades;
 }
 
-
-Card::Card(int rank, Card::Suit s) {
-
+Card::Card(int rank, Card::Suit s) {//Normal Constructor -- parameter based
+    myRank = rank;
+    mySuit = s;
 }
-
 
 // return string version e.g. Ac 4h Js
 string Card::toString() const {
-    return nullptr;
+    return rankString(myRank) + suitString(mySuit);
 }
-
 
 // true if suit same as c
 bool Card::sameSuitAs(const Card& c) const {
-    return false;
+    return mySuit == c.mySuit;
 }
-
 
 // return rank, 1..13
 int Card::getRank() const {
-    return 0;
+    return myRank;
 }
-
 
 // return "s", "h",...
 string Card::suitString(Card::Suit s) const {
-    return nullptr;
+    string suitShort;
+    if (s == spades){
+        suitShort = 's';
+    }
+    else if (s == hearts){
+        suitShort = 'h';
+    }
+    else if (s == diamonds){
+        suitShort = 'd';
+    }
+    else {
+        suitShort = 'c';
+    }
+    return suitShort;
 }
-
 
 // return "A", "2", ..."Q"
 string Card::rankString(int r) const {
-    return nullptr;
+    string cardRank;
+    if (r == 1){
+        cardRank = 'A';
+    }
+    else if(r == 11){
+        cardRank = 'J';
+    }
+    else if(r == 12){
+        cardRank = 'Q';
+    }
+    else if(r == 13){
+        cardRank = 'K';
+    }
+    else{
+        cardRank = to_string(r);
+    }
+    return cardRank;
 }
-
-
 
 bool Card::operator==(const Card& rhs) const {
-    return false;
+    return myRank == rhs.myRank && mySuit == rhs.mySuit;
 }
 
-
-
 bool Card::operator!=(const Card& rhs) const {
-    return false;
+    return myRank != rhs.myRank || mySuit != rhs.mySuit;
+}
+
+Card& Card::operator=(const Card& rhs) {
+    myRank = rhs.myRank;
+    mySuit = rhs.mySuit;
+    return *this;
+}
+
+Card::~Card() {
+
+}
+
+Card::Card(const Card& rhs) {
+    myRank = rhs.myRank;
+    mySuit = rhs.mySuit;
 }

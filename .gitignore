@@ -34,3 +34,4 @@ GoFish
 *.exe
 *.out
 *.app
+CMakeLists.txt
