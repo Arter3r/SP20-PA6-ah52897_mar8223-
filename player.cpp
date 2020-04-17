@@ -73,7 +73,13 @@ string Player::showHand() const {
 }
 
 string Player::showBooks() const {
-    return "";
+    string visibleBooks;
+    int i;
+    while (i != myBook.size()){
+        visibleBooks += myBook[i].toString()+" ";
+        i++;
+    }
+    return visibleBooks;
 }
 
 
