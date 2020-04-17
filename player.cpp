@@ -62,7 +62,7 @@ Card Player::removeCardFromHand(Card c) {
 
 string Player::showHand() const {
     string visibleHand = "";
-    int i;
+    int i = 0;
     while (i != myHand.size()){
         visibleHand += myHand[i].toString()+" ";
         i++;
