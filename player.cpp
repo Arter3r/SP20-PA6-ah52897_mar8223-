@@ -8,18 +8,14 @@
 #include "player.h"
 
 
-
 Player::Player() {
 
 }
 
-
 //adds a card to the hand
 void Player::addCard(Card c) {
-
+    myHand.push_back(c);
 }
-
-
 
 void Player::bookCards(Card c1, Card c2) {
 
