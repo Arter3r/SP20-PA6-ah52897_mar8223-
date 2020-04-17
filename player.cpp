@@ -72,7 +72,7 @@ string Player::showHand() const {
 
 string Player::showBooks() const {
     string visibleBooks = 0;
-    int i;
+    int i = 0;
     while (i != myBook.size()){
         visibleBooks += myBook[i].toString()+" ";
         i++;
