@@ -82,13 +82,9 @@ string Player::showBooks() const {
     return visibleBooks;
 }
 
-
-
 int Player::getHandSize() const {
-    return 0;
+    return myHand.size();
 }
-
-
 
 int Player::getBookSize() const {
     return 0;
