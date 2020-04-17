@@ -24,7 +24,7 @@ int main( )
 {
     srand(time(NULL));
     out.open("gofish_results.txt");
-    int numCards = 5;
+    int numCards = 7;
     
     Player p1("Joe");
     Player p2("Jane");
