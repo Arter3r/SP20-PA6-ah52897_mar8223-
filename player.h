@@ -43,14 +43,15 @@ class Player
     //OPTIONAL
     // comment out if you decide to not use it    
     //Does the player have a card with the same rank as c in her hand?
-    bool rankInHand(Card c) const;
+    //If yes, set c to that card.
+    bool rankInHand(Card& c) const;
     
     //uses some strategy to choose one card from the player's
     //hand so they can say "Do you have a 4?"
     Card chooseCardFromHand() const; 
     
     //Does the player have the card c in her hand?
-    bool cardInHand(Card c) const; 
+    bool cardInHand(Card c) const;
     
     //Remove the card c from the hand and return it to the caller
     Card removeCardFromHand(Card c); 

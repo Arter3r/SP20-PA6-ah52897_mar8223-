@@ -60,9 +60,11 @@ bool Player::checkHandForBook(Card& c1, Card& c2) {
 //OPTIONAL
 // comment out if you decide to not use it
 //Does the player have a card with the same rank as c in her hand?
-bool Player::rankInHand(Card c) const {
+//If yes, set c to that card.
+bool Player::rankInHand(Card& c) const {
     for (int i=0; i<myHand.size(); i++){
         if(myHand[i].getRank() == c.getRank()){
+            c = myHand[i];
             return true;
         }
     }
@@ -109,7 +111,7 @@ string Player::showHand() const {
 }
 
 string Player::showBooks() const {
-    string visibleBooks = 0;
+    string visibleBooks = "";
     int i = 0;
     while (i != myBook.size()){
         visibleBooks += myBook[i].toString()+" ";
