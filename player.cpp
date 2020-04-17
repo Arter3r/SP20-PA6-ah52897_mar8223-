@@ -9,7 +9,7 @@
 
 
 Player::Player() {
-
+    myName = "Player";
 }
 
 //adds a card to the hand
