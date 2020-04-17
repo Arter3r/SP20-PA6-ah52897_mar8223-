@@ -17,10 +17,10 @@ void Player::addCard(Card c) {
     myHand.push_back(c);
 }
 
-void Player::bookCards(Card c1, Card c2) {
-
+void Player::bookCards(Card c1, Card c2) {//moves c1 and c2 from hand to books
+    myBook.push_back(c1);
+    myBook.push_back(c2);
 }
-
 
 //OPTIONAL
 // comment out if you decide to not use it
