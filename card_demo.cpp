@@ -97,8 +97,9 @@ bool fish(Player& p, Deck& d) {
         out << p.getName() << " picks up " << fished.toString();
 
         if (bookCards(p)) {
-            cout << ", and books it";
-            out << ", and books it";
+            cout << ", and books it"<< "." << endl;
+            out << ", and books it"<< "." << endl;
+            return false;
         }
 
         cout << "." << endl;
@@ -113,12 +114,14 @@ void doTurn(Deck& d, Player& p1, Player& p2, int numPlayers) {
     cout << endl << "Turn #" << turn << ":\n";
     out << endl << "Turn #" << turn << ":\n";
 
-    while (bookCards(p1)) {
+    if (bookCards(p1)) {
+        while(bookCards(p1));
         cout << p1.getName() << " books initial cards." << endl;
         out << p1.getName() << " books initial cards." << endl;
     }
 
-    while (bookCards(p2)) {
+    if (bookCards(p2)) {
+        while(bookCards(p2));
         cout << p2.getName() << " books initial cards." << endl;
         out << p2.getName() << " books initial cards." << endl;
     }
@@ -184,7 +187,7 @@ bool ask(Deck& d, Player& currentTurn, Player& other) {
     } else {
         cout << other.getName() << " says - Go Fish!" << endl;
         out << other.getName() << " says - Go Fish!" << endl;
-        fish(currentTurn, d);
+        return fish(currentTurn, d);
     }
 }
 
