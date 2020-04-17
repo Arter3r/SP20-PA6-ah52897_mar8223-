@@ -8,23 +8,21 @@
 #include "player.h"
 
 
-
 Player::Player() {
-
+    myName = "Player";
 }
-
 
 //adds a card to the hand
 void Player::addCard(Card c) {
-
+    myHand.push_back(c);
 }
 
-
-
-void Player::bookCards(Card c1, Card c2) {
-
+void Player::bookCards(Card c1, Card c2) {//moves c1 and c2 from hand to books
+    myBook.push_back(c1);
+    myBook.push_back(c2);
+    removeCardFromHand(c1);
+    removeCardFromHand(c2);
 }
-
 
 //OPTIONAL
 // comment out if you decide to not use it
@@ -34,7 +32,6 @@ bool Player::checkHandForBook(Card& c1, Card& c2) {
     return false;
 }
 
-
 //OPTIONAL
 // comment out if you decide to not use it
 //Does the player have a card with the same rank as c in her hand?
@@ -42,49 +39,54 @@ bool Player::rankInHand(Card c) const {
     return false;
 }
 
-
 //uses some strategy to choose one card from the player's
 //hand so they can say "Do you have a 4?"
 Card Player::chooseCardFromHand() const {
     return Card();
 }
 
-
 //Does the player have the card c in her hand?
 bool Player::cardInHand(Card c) const {
+    for (int i=0; i<myHand.size(); i++){
+        if(myHand[i] == c){
+            return true;
+        }
+    }
     return false;
 }
-
 
 //Remove the card c from the hand and return it to the caller
 Card Player::removeCardFromHand(Card c) {
     return Card();
 }
 
-
-
 string Player::showHand() const {
-    return "";
+    string visibleHand = "";
+    int i = 0;
+    while (i != myHand.size()){
+        visibleHand += myHand[i].toString()+" ";
+        i++;
+    }
+    return visibleHand.substr(0, visibleHand.size()-1);
 }
-
-
 
 string Player::showBooks() const {
-    return "";
+    string visibleBooks = 0;
+    int i = 0;
+    while (i != myBook.size()){
+        visibleBooks += myBook[i].toString()+" ";
+        i++;
+    }
+    return visibleBooks.substr(0, visibleBooks.size()-1);
 }
-
-
 
 int Player::getHandSize() const {
-    return 0;
+    return myHand.size();
 }
-
-
 
 int Player::getBookSize() const {
-    return 0;
+    return myBook.size();
 }
-
 
 //OPTIONAL
 // comment out if you decide to not use it
@@ -93,7 +95,6 @@ int Player::getBookSize() const {
 bool Player::checkHandForPair(Card& c1, Card& c2) {
     return false;
 }
-
 
 //OPTIONAL
 // comment out if you decide to not use it
