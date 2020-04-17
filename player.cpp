@@ -87,7 +87,7 @@ int Player::getHandSize() const {
 }
 
 int Player::getBookSize() const {
-    return 0;
+    return myBook.size();
 }
 
 
