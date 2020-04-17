@@ -48,6 +48,11 @@ Card Player::chooseCardFromHand() const {
 
 //Does the player have the card c in her hand?
 bool Player::cardInHand(Card c) const {
+    for (int i=0; i<myHand.size(); i++){
+        if(myHand[i] == c){
+            return true;
+        }
+    }
     return false;
 }
 
