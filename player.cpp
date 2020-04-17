@@ -62,13 +62,15 @@ Card Player::removeCardFromHand(Card c) {
     return Card();
 }
 
-
-
 string Player::showHand() const {
-    return "";
+    string visibleHand;
+    int i;
+    while (i != myHand.size()){
+        visibleHand += myHand[i].toString()+" ";
+        i++;
+    }
+    return visibleHand;
 }
-
-
 
 string Player::showBooks() const {
     return "";
