@@ -30,7 +30,6 @@ bool Player::checkHandForBook(Card& c1, Card& c2) {
     return false;
 }
 
-
 //OPTIONAL
 // comment out if you decide to not use it
 //Does the player have a card with the same rank as c in her hand?
@@ -38,13 +37,11 @@ bool Player::rankInHand(Card c) const {
     return false;
 }
 
-
 //uses some strategy to choose one card from the player's
 //hand so they can say "Do you have a 4?"
 Card Player::chooseCardFromHand() const {
     return Card();
 }
-
 
 //Does the player have the card c in her hand?
 bool Player::cardInHand(Card c) const {
@@ -55,7 +52,6 @@ bool Player::cardInHand(Card c) const {
     }
     return false;
 }
-
 
 //Remove the card c from the hand and return it to the caller
 Card Player::removeCardFromHand(Card c) {
@@ -90,7 +86,6 @@ int Player::getBookSize() const {
     return myBook.size();
 }
 
-
 //OPTIONAL
 // comment out if you decide to not use it
 //this function will check a players hand for a pair.
@@ -98,7 +93,6 @@ int Player::getBookSize() const {
 bool Player::checkHandForPair(Card& c1, Card& c2) {
     return false;
 }
-
 
 //OPTIONAL
 // comment out if you decide to not use it
