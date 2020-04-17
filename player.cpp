@@ -20,6 +20,8 @@ void Player::addCard(Card c) {
 void Player::bookCards(Card c1, Card c2) {//moves c1 and c2 from hand to books
     myBook.push_back(c1);
     myBook.push_back(c2);
+    removeCardFromHand(c1);
+    removeCardFromHand(c2);
 }
 
 //OPTIONAL
